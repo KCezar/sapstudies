@@ -1,0 +1,82 @@
+_schema-version: "3.2"
+ID: route-test-commons
+description: Fiori Commons Library
+version: 0.0.2
+modules:
+- name: route-test-commons-dest-content
+  type: com.sap.application.content
+  requires:
+  - name: route-test-commons-dest-srv
+    parameters:
+      content-target: true
+  - name: route-test-commons-repo-host
+    parameters:
+      service-key:
+        name: route-test-commons-repo-host-key
+  - name: route-test-commons-uaa
+    parameters:
+      service-key:
+        name: route-test-commons-uaa-key
+  parameters:
+    content:
+      subaccount:
+        destinations:
+        - Name: route-test-commons_repo_host
+          ServiceInstanceName: route-test-commons-html5-srv
+          ServiceKeyName: route-test-commons-repo-host-key
+          sap.cloud.service: route-test-commons
+        - Authentication: OAuth2UserTokenExchange
+          Name: route-test-commons_uaa
+          ServiceInstanceName: route-test-commons-xsuaa-srv
+          ServiceKeyName: route-test-commons-uaa-key
+          sap.cloud.service: route-test-commons
+        existing_destinations_policy: ignore
+  build-parameters:
+    no-source: true
+- name: route-test-commons-app-content
+  type: com.sap.application.content
+  path: .
+  requires:
+  - name: route-test-commons-repo-host
+    parameters:
+      content-target: true
+  build-parameters:
+    build-result: resources
+    requires:
+    - artifacts:
+      - routetestcommons.zip
+      name: routetestcommons
+      target-path: resources/
+- name: routetestcommons
+  type: html5
+  path: .
+  build-parameters:
+    build-result: dist
+    builder: custom
+    commands:
+    - npm install
+    - npm run build:cf
+    supported-platforms: []
+resources:
+- name: route-test-commons-dest-srv
+  type: org.cloudfoundry.managed-service
+  parameters:
+    service: destination
+    service-name: route-test-commons-dest-srv
+    service-plan: lite
+- name: route-test-commons-uaa
+  type: org.cloudfoundry.managed-service
+  parameters:
+    path: ./xs-security.json
+    service: xsuaa
+    service-name: route-test-commons-xsuaa-srv
+    service-plan: application
+- name: route-test-commons-repo-host
+  type: org.cloudfoundry.managed-service
+  parameters:
+    service: html5-apps-repo
+    service-name: route-test-commons-html5-srv
+    service-plan: app-host
+parameters:
+  deploy_mode: html5-repo
+  enable-parallel-deployments: true

@@ -1,0 +1,14 @@
+<?xml version="1.0" ?>
+<library xmlns="http://www.sap.com/sap.ui.library.xsd">
+	<name>route.test.commons</name>
+	<vendor>Kefren Conceição</vendor>
+	<version>${version}</version>
+	<copyright>${copyright}</copyright>
+	<title>commons</title>
+	<documentation>Some description about commons</documentation>
+	<dependencies>
+		<dependency>
+			<libraryName>sap.ui.core</libraryName>
+		</dependency>
+	</dependencies>
+</library>

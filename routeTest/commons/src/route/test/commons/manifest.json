@@ -1,0 +1,53 @@
+{
+	"_version": "1.12.0",
+	"sap.app": {
+		"id": "route.test.commons",
+		"type": "library",
+		"applicationVersion": {
+			"version": "1.0.0"
+		},
+		"title": "Fiori Commons Library",
+		"description": "Fiori Commons Library",
+		"ach": "",
+		"offline": true
+	},
+	"sap.ui": {
+		"technology": "UI5",
+		"supportedThemes": [
+			"sap_hcb",
+			"sap_belize",
+			"sap_belize_plus"
+		]
+	},
+	"sap.ui5": {
+		"dependencies": {
+			"minUI5Version": "1.52.0",
+			"libs": {
+				"sap.ui.core": {
+					"minUI5Version": "1.52.0"
+				}
+			}
+		},
+		"library": {
+			"i18n": "messagebundle.properties",
+			"css": true,
+			"content": {
+				"controls": ["route.test.commons.controls.Example"],
+				"elements": [],
+				"types": [],
+				"interfaces": []
+			}
+		}
+	},
+	"sap.platform.hcp": {
+		"uri": ""
+	},
+    "sap.cloud": {
+		"public": true,
+		"service": "route.test.commons"
+	},
+	"sap.fiori": {
+		"registrationIds": [],
+		"archeType": "reusecomponent"
+	}
+}

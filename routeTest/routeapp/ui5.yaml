@@ -1,0 +1,40 @@
+specVersion: "2.5"
+metadata:
+  name: route.test.routeapp
+type: application
+server:
+  customMiddleware:
+    - name: fiori-tools-proxy
+      afterMiddleware: compression
+      configuration:
+        ignoreCertError: false
+        ui5:
+          path:
+            - /resources
+            - /test-resources
+          url: https://ui5.sap.com
+          version: ""
+        backend:
+          - path: /sap
+            url: http://localhost
+    - name: fiori-tools-appreload
+      afterMiddleware: compression
+      configuration:
+        port: 35729
+        path: webapp
+        delay: 300
+    - name: fiori-tools-preview
+      afterMiddleware: fiori-tools-appreload
+      configuration:
+        component: route.test.routeapp
+        ui5Theme: sap_fiori_3
+    - name: fiori-tools-servestatic
+      afterMiddleware: compression
+      configuration:
+        paths:
+          - path: /resources/route/test/commons
+            src: /home/user/projects/routeTest/commons/src/route/test/commons
+            fallthrough: false
+          - path: /resources/route/test/commons
+            src: /home/user/projects/routeTest/commons/src/route/test/commons
+            fallthrough: false
