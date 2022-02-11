@@ -38,3 +38,6 @@ server:
           - path: /resources/route/test/commons
             src: /home/user/projects/routeTest/commons/src/route/test/commons
             fallthrough: false
+          - path: /resources/route/test/commons
+            src: /home/user/projects/routeTest/commons/src/route/test/commons
+            fallthrough: false

@@ -58,7 +58,9 @@
             "minUI5Version": "1.97.2",
             "libs": {
                 "sap.ui.core": {},
-                "route.test.commons": {}
+                "route.test.commons": {
+                    "minVersion": "1.0.0"
+                }
             }
         },
         "contentDensities": {

@@ -19,12 +19,6 @@
       "target": "$1",
       "service": "html5-apps-repo-rt",
       "authenticationType": "xsuaa"
-    },
-    {
-        "source": "^/resources/route/test/commons/(.*)$",
-        "target": "$1",
-        "authenticationType": "none",
-        "destination": "route-test-commons-dest-srv"
     }
   ]
 }

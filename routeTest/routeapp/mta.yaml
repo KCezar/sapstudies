@@ -1,7 +1,7 @@
 _schema-version: "3.2"
 ID: route-test-routeapp
 description: A Fiori application.
-version: 0.0.3
+version: 0.0.9
 modules:
 - name: route-test-routeapp-dest-content
   type: com.sap.application.content
@@ -19,7 +19,7 @@ modules:
         name: route-test-routeapp-uaa-key
   parameters:
     content:
-      instance:
+      subaccount:
         destinations:
         - Name: route-test-routeapp_repo_host
           ServiceInstanceName: route-test-routeapp-html5-srv
