@@ -44,7 +44,7 @@
 	},
     "sap.cloud": {
 		"public": true,
-		"service": "route.test.commons"
+		"service": "route-test-commons"
 	},
 	"sap.fiori": {
 		"registrationIds": [],

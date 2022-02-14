@@ -17,7 +17,7 @@ sap.ui.define([
              * @override
              */
             init: function () {
-                sap.ui.getCore().loadLibrary("route.test.commons","/route-test-commons.routetestcommons-1.0.0");
+                //sap.ui.getCore().loadLibrary("route.test.commons","/route-test-commons.routetestcommons-1.0.0");
                 // call the base component's init function
                 UIComponent.prototype.init.apply(this, arguments);
 
