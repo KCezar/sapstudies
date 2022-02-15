@@ -1,53 +1,53 @@
 _schema-version: "3.2"
-ID: route-test-routeapp
+ID: app-route-manage-approutemanagetest
 description: A Fiori application.
 version: 0.0.1
 modules:
-- name: route-test-routeapp-dest-content
+- name: app-route-manage-approutemanagetest-dest-content
   type: com.sap.application.content
   requires:
-  - name: route-test-routeapp-dest-srv
+  - name: app-route-manage-approutemanagetest-dest-srv
     parameters:
       content-target: true
-  - name: route-test-routeapp-repo-host
+  - name: app-route-manage-approutemanagetest-repo-host
     parameters:
       service-key:
-        name: route-test-routeapp-repo-host-key
-  - name: route-test-routeapp-uaa
+        name: app-route-manage-approutemanagetest-repo-host-key
+  - name: app-route-manage-approutemanagetest-uaa
     parameters:
       service-key:
-        name: route-test-routeapp-uaa-key
+        name: app-route-manage-approutemanagetest-uaa-key
   parameters:
     content:
-      subaccount:
+      instance:
         destinations:
-        - Name: route-test-routeapp_repo_host
-          ServiceInstanceName: route-test-routeapp-html5-srv
-          ServiceKeyName: route-test-routeapp-repo-host-key
-          sap.cloud.service: route-test-routeapp
+        - Name: app-route-manage-approutemanagetest_repo_host
+          ServiceInstanceName: app-route-manage-approutemanagetest-html5-srv
+          ServiceKeyName: app-route-manage-approutemanagetest-repo-host-key
+          sap.cloud.service: app-route-manage-approutemanagetest
         - Authentication: OAuth2UserTokenExchange
-          Name: route-test-routeapp_uaa
-          ServiceInstanceName: route-test-routeapp-xsuaa-srv
-          ServiceKeyName: route-test-routeapp-uaa-key
-          sap.cloud.service: route-test-routeapp
+          Name: app-route-manage-approutemanagetest_uaa
+          ServiceInstanceName: app-route-manage-approutemanagetest-xsuaa-srv
+          ServiceKeyName: app-route-manage-approutemanagetest-uaa-key
+          sap.cloud.service: app-route-manage-approutemanagetest
         existing_destinations_policy: ignore
   build-parameters:
     no-source: true
-- name: route-test-routeapp-app-content
+- name: app-route-manage-approutemanagetest-app-content
   type: com.sap.application.content
   path: .
   requires:
-  - name: route-test-routeapp-repo-host
+  - name: app-route-manage-approutemanagetest-repo-host
     parameters:
       content-target: true
   build-parameters:
     build-result: resources
     requires:
     - artifacts:
-      - routetestrouteapp.zip
-      name: routetestrouteapp
+      - approutemanageapproutemanagetest.zip
+      name: approutemanageapproutemanagetest
       target-path: resources/
-- name: routetestrouteapp
+- name: approutemanageapproutemanagetest
   type: html5
   path: .
   build-parameters:
@@ -58,7 +58,7 @@ modules:
     - npm run build:cf
     supported-platforms: []
 resources:
-- name: route-test-routeapp-dest-srv
+- name: app-route-manage-approutemanagetest-dest-srv
   type: org.cloudfoundry.managed-service
   parameters:
     config:
@@ -74,22 +74,21 @@ resources:
           existing_destinations_policy: update
       version: 1.0.0
     service: destination
-    service-name: route-test-routeapp-dest-srv
+    service-name: app-route-manage-approutemanagetest-dest-srv
     service-plan: lite
-- name: route-test-routeapp-uaa
+- name: app-route-manage-approutemanagetest-uaa
   type: org.cloudfoundry.managed-service
   parameters:
     path: ./xs-security.json
     service: xsuaa
-    service-name: route-test-routeapp-xsuaa-srv
+    service-name: app-route-manage-approutemanagetest-xsuaa-srv
     service-plan: application
-- name: route-test-routeapp-repo-host
+- name: app-route-manage-approutemanagetest-repo-host
   type: org.cloudfoundry.managed-service
   parameters:
     service: html5-apps-repo
-    service-name: route-test-routeapp-html5-srv
+    service-name: app-route-manage-approutemanagetest-html5-srv
     service-plan: app-host
 parameters:
   deploy_mode: html5-repo
   enable-parallel-deployments: true
- 

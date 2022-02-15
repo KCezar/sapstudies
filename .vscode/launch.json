@@ -1,115 +1,225 @@
 {
-  "configurations": [
-    {
-      "name": "Start routeapp",
-      "type": "node",
-      "request": "launch",
-      "runtimeExecutable": "npx",
-      "cwd": "${workspaceFolder}/routeapp",
-      "windows": {
-        "runtimeExecutable": "npx.cmd"
-      },
-      "runtimeArgs": [
-        "fiori",
-        "run"
-      ],
-      "args": [
-        "--open",
-        "'test/flpSandbox.html#routetestrouteapp-display'"
-      ],
-      "console": "integratedTerminal",
-      "internalConsoleOptions": "neverOpen",
-      "port": 9229,
-      "env": {
-        "DEBUG": "--inspect",
-        "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/routeTest/routeapp\"}"
-      }
-    },
-    {
-      "name": "Start routeapp Local",
-      "type": "node",
-      "request": "launch",
-      "cwd": "${workspaceFolder}/routeapp",
-      "runtimeExecutable": "npx",
-      "windows": {
-        "runtimeExecutable": "npx.cmd"
-      },
-      "runtimeArgs": [
-        "fiori",
-        "run"
-      ],
-      "args": [
-        "--config",
-        "./ui5-local.yaml",
-        "--open",
-        "'test/flpSandbox.html#routetestrouteapp-display'"
-      ],
-      "console": "integratedTerminal",
-      "internalConsoleOptions": "neverOpen",
-      "port": 9229,
-      "env": {
-        "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/routeTest/routeapp\"}"
-      }
-    },
-    {
-      "name": "Start teste",
-      "type": "node",
-      "request": "launch",
-      "runtimeExecutable": "npx",
-      "cwd": "${workspaceFolder}/teste",
-      "windows": {
-        "runtimeExecutable": "npx.cmd"
-      },
-      "runtimeArgs": [
-        "fiori",
-        "run"
-      ],
-      "args": [
-        "--open",
-        "'test/flpSandbox.html#testeteste-display'"
-      ],
-      "console": "integratedTerminal",
-      "internalConsoleOptions": "neverOpen",
-      "port": 9229,
-      "env": {
-        "DEBUG": "--inspect",
-        "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/teste\"}"
-      }
-    },
-    {
-      "name": "Start teste Local",
-      "type": "node",
-      "request": "launch",
-      "cwd": "${workspaceFolder}/teste",
-      "runtimeExecutable": "npx",
-      "windows": {
-        "runtimeExecutable": "npx.cmd"
-      },
-      "runtimeArgs": [
-        "fiori",
-        "run"
-      ],
-      "args": [
-        "--config",
-        "./ui5-local.yaml",
-        "--open",
-        "'test/flpSandbox.html#testeteste-display'"
-      ],
-      "console": "integratedTerminal",
-      "internalConsoleOptions": "neverOpen",
-      "port": 9229,
-      "env": {
-        "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/teste\"}"
-      }
-    }
-  ],
-  "compounds": [],
-  "inputs": [
-    {
-      "id": "UI5Version",
-      "type": "command",
-      "command": "sap.ux.appGenerator.ui5Version"
-    }
-  ],
-  "version": "0.2.0"
+    "configurations": [
+        {
+            "name": "Start routeapp",
+            "type": "node",
+            "request": "launch",
+            "runtimeExecutable": "npx",
+            "cwd": "${workspaceFolder}/routeapp",
+            "windows": {
+                "runtimeExecutable": "npx.cmd"
+            },
+            "runtimeArgs": [
+                "fiori",
+                "run"
+            ],
+            "args": [
+                "--open",
+                "'test/flpSandbox.html#routetestrouteapp-display'"
+            ],
+            "console": "integratedTerminal",
+            "internalConsoleOptions": "neverOpen",
+            "port": 9229,
+            "env": {
+                "DEBUG": "--inspect",
+                "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/routeTest/routeapp\"}"
+            }
+        },
+        {
+            "name": "Start routeapp Local",
+            "type": "node",
+            "request": "launch",
+            "cwd": "${workspaceFolder}/routeapp",
+            "runtimeExecutable": "npx",
+            "windows": {
+                "runtimeExecutable": "npx.cmd"
+            },
+            "runtimeArgs": [
+                "fiori",
+                "run"
+            ],
+            "args": [
+                "--config",
+                "./ui5-local.yaml",
+                "--open",
+                "'test/flpSandbox.html#routetestrouteapp-display'"
+            ],
+            "console": "integratedTerminal",
+            "internalConsoleOptions": "neverOpen",
+            "port": 9229,
+            "env": {
+                "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/routeTest/routeapp\"}"
+            }
+        },
+        {
+            "name": "Start teste",
+            "type": "node",
+            "request": "launch",
+            "runtimeExecutable": "npx",
+            "cwd": "${workspaceFolder}/teste",
+            "windows": {
+                "runtimeExecutable": "npx.cmd"
+            },
+            "runtimeArgs": [
+                "fiori",
+                "run"
+            ],
+            "args": [
+                "--open",
+                "'test/flpSandbox.html#testeteste-display'"
+            ],
+            "console": "integratedTerminal",
+            "internalConsoleOptions": "neverOpen",
+            "port": 9229,
+            "env": {
+                "DEBUG": "--inspect",
+                "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/teste\"}"
+            }
+        },
+        {
+            "name": "Start teste Local",
+            "type": "node",
+            "request": "launch",
+            "cwd": "${workspaceFolder}/teste",
+            "runtimeExecutable": "npx",
+            "windows": {
+                "runtimeExecutable": "npx.cmd"
+            },
+            "runtimeArgs": [
+                "fiori",
+                "run"
+            ],
+            "args": [
+                "--config",
+                "./ui5-local.yaml",
+                "--open",
+                "'test/flpSandbox.html#testeteste-display'"
+            ],
+            "console": "integratedTerminal",
+            "internalConsoleOptions": "neverOpen",
+            "port": 9229,
+            "env": {
+                "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/teste\"}"
+            }
+        },
+        {
+            "name": "Start approutemanagetest",
+            "type": "node",
+            "request": "launch",
+            "runtimeExecutable": "npx",
+            "cwd": "${workspaceFolder}/approutemanagetest",
+            "windows": {
+                "runtimeExecutable": "npx.cmd"
+            },
+            "runtimeArgs": [
+                "fiori",
+                "run"
+            ],
+            "args": [
+                "--open",
+                "test/flpSandbox.html?sap-ui-xx-viewCache=false#approutemanageapproutemanagetest-display"
+            ],
+            "console": "integratedTerminal",
+            "internalConsoleOptions": "neverOpen",
+            "port": 9229,
+            "env": {
+                "DEBUG": "--inspect",
+                "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/routeTest/approutemanagetest\"}"
+            }
+        },
+        {
+            "name": "Start approutemanagetest Local",
+            "type": "node",
+            "request": "launch",
+            "cwd": "${workspaceFolder}/approutemanagetest",
+            "runtimeExecutable": "npx",
+            "windows": {
+                "runtimeExecutable": "npx.cmd"
+            },
+            "runtimeArgs": [
+                "fiori",
+                "run"
+            ],
+            "args": [
+                "--config",
+                "./ui5-local.yaml",
+                "--open",
+                "test/flpSandbox.html?sap-ui-xx-viewCache=false#approutemanageapproutemanagetest-display"
+            ],
+            "console": "integratedTerminal",
+            "internalConsoleOptions": "neverOpen",
+            "port": 9229,
+            "env": {
+                "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/routeTest/approutemanagetest\"}"
+            }
+        },
+        {
+            "name": "Start noappmanageroute",
+            "type": "node",
+            "request": "launch",
+            "runtimeExecutable": "npx",
+            "cwd": "${workspaceFolder}/noappmanageroute",
+            "windows": {
+                "runtimeExecutable": "npx.cmd"
+            },
+            "runtimeArgs": [
+                "fiori",
+                "run"
+            ],
+            "args": [
+                "--open",
+                "test/flpSandbox.html?sap-ui-xx-viewCache=false#noappmanageroutenoappmanageroute-display"
+            ],
+            "console": "integratedTerminal",
+            "internalConsoleOptions": "neverOpen",
+            "port": 9229,
+            "env": {
+                "DEBUG": "--inspect",
+                "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/routeTest/noappmanageroute\"}"
+            }
+        },
+        {
+            "name": "Start noappmanageroute Local",
+            "type": "node",
+            "request": "launch",
+            "cwd": "${workspaceFolder}/noappmanageroute",
+            "runtimeExecutable": "npx",
+            "windows": {
+                "runtimeExecutable": "npx.cmd"
+            },
+            "runtimeArgs": [
+                "fiori",
+                "run"
+            ],
+            "args": [
+                "--config",
+                "./ui5-local.yaml",
+                "--open",
+                "test/flpSandbox.html?sap-ui-xx-viewCache=false#noappmanageroutenoappmanageroute-display"
+            ],
+            "console": "integratedTerminal",
+            "internalConsoleOptions": "neverOpen",
+            "port": 9229,
+            "env": {
+                "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/routeTest/noappmanageroute\"}"
+            }
+        }
+    ],
+    "compounds": [],
+    "inputs": [
+        {
+            "id": "UI5Version",
+            "type": "command",
+            "command": "sap.ux.appGenerator.ui5Version"
+        },
+        {
+            "id": "UI5MinVersion1.65.0",
+            "type": "command",
+            "command": "sap.ux.appGenerator.ui5Version",
+            "args": {
+                "minUI5Version": "1.65.0"
+            }
+        }
+    ],
+    "version": "0.2.0"
 }
